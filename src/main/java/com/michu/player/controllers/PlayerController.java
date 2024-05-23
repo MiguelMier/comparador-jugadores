@@ -25,4 +25,9 @@ public class PlayerController {
     public ResponseEntity<String> comparePlayer(@RequestParam long playerId1, @RequestParam long playerId2) throws UnirestException {
         return ResponseEntity.ok(playerService.comparePlayers(playerId1, playerId2));
     }
+
+    @GetMapping("/top10")
+    public ResponseEntity<String> top10Players() throws UnirestException {
+        return ResponseEntity.ok(playerService.top10Players());
+    }
 }

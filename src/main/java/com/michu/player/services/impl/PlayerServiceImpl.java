@@ -21,7 +21,7 @@ public class PlayerServiceImpl implements PlayerService {
                 .header("x-rapidapi-host", "transfermarkt-db.p.rapidapi.com")
                 .asString();
 
-        return response.getBody();  
+        return response.getBody();
     }
 
     @Override
@@ -31,6 +31,15 @@ public class PlayerServiceImpl implements PlayerService {
                 .header("x-rapidapi-host", "transfermarkt-db.p.rapidapi.com")
                 .asString();
 
+        return response.getBody();
+    }
+
+    @Override
+    public String top10Players() throws UnirestException {
+        HttpResponse<String> response = Unirest.get("https://transfermarkt-db.p.rapidapi.com/v1/players/images?player_ids=276002%2C85298%2C810895%2C533007%2C330659%2C824353%2C73013%2C523318%2C420884%2C533738&locale=DE")
+                .header("x-rapidapi-key", "fe9b5bd5a6mshf3cd610816b3682p178cc9jsnda04eea22207")
+                .header("x-rapidapi-host", "transfermarkt-db.p.rapidapi.com")
+                .asString();
         return response.getBody();
     }
 

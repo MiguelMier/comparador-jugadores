@@ -9,4 +9,6 @@ public interface PlayerService {
     String getPlayerInfo(long playerId) throws UnirestException;
 
     String comparePlayers(long playerId1, long playerId2) throws UnirestException;
+
+    String top10Players() throws UnirestException;
 }
