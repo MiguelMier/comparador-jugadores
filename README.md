@@ -18,3 +18,12 @@ Este proyecto es una aplicación backend desarrollada en Java usando Spring Boot
 - **Obtener Información de Jugadores**: Recupera información detallada de jugadores de fútbol desde RapidAPI.
 - **Comparar Jugadores**: Compara estadísticas de dos jugadores, incluyendo goles, asistencias y partidos jugados.
 - **Persistencia de Datos**: Almacena y gestiona datos de jugadores en una base de datos MariaDB.
+
+## Dockerización
+
+Para la realización del Dockerfile y demás, se han utilizado los siguientes comandos:
+
+- **Dockerfile**: se crea el archivo Dockerfile y se añade el contenido relevante de directorio y el archivo JAR.
+  - **JAR**: para crear el archivo JAR se necesita ejecutar previamente: ``` mvn clean package ```
+- **Construir la imagen**: Una vez creado el JAR y el Dockerfile, se crea la imagen: ```docker build -t player:latest .```
+- **Ejecutar el contenedor**: Una vez creada la imagen, se ejecuta: ```docker run -p 8080:8080 player:latest```
