@@ -7,10 +7,8 @@ Este proyecto es una aplicación backend desarrollada en Java usando Spring Boot
 ## Tecnologías Utilizadas
 
 - **Spring Boot**: Framework principal para el desarrollo del backend.
-- **MariaDB**: Sistema de gestión de bases de datos relacional.
 - **Docker**: Plataforma de contenedorización para simplificar el despliegue y la ejecución de la aplicación.
 - **RapidAPI**: Fuente externa para obtener datos de jugadores de fútbol.
-- **JPA (Java Persistence API)**: Para la gestión de la persistencia de datos.
 - **RestTemplate**: Para realizar llamadas HTTP a la API de RapidAPI.
 
 ## Funcionalidades
@@ -27,3 +25,5 @@ Para la realización del Dockerfile y demás, se han utilizado los siguientes co
   - **JAR**: para crear el archivo JAR se necesita ejecutar previamente: ``` mvn clean package ```
 - **Construir la imagen**: Una vez creado el JAR y el Dockerfile, se crea la imagen: ```docker build -t player:latest .```
 - **Ejecutar el contenedor**: Una vez creada la imagen, se ejecuta: ```docker run -p 8080:8080 player:latest```
+
+- Se ha realizado una versión posterior en la que se automatiza esta labor con una Github Action.
