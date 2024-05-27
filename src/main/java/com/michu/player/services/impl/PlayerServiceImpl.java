@@ -43,6 +43,16 @@ public class PlayerServiceImpl implements PlayerService {
         return response.getBody();
     }
 
+    @Override
+    public String getClubSquad(long squadId) throws UnirestException {
+        String url = "https://transfermarkt-db.p.rapidapi.com/v1/clubs/squad?season_id=2021&locale=DE&club_id=" + squadId;
+        HttpResponse<String> response = Unirest.get(url)
+                .header("x-rapidapi-key", "fe9b5bd5a6mshf3cd610816b3682p178cc9jsnda04eea22207")
+                .header("x-rapidapi-host", "transfermarkt-db.p.rapidapi.com")
+                .asString();
+        return response.getBody();
+    }
+
     private String compare(String playerInfo1, String playerInfo2) {
         // Convierte JSON a objetos de jugador
         Player player1 = convertJsonToPlayer(playerInfo1);

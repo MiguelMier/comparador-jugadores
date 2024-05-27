@@ -11,4 +11,6 @@ public interface PlayerService {
     String comparePlayers(long playerId1, long playerId2) throws UnirestException;
 
     String top10Players() throws UnirestException;
+
+    String getClubSquad(long squadId) throws UnirestException;
 }

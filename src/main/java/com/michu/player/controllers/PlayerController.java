@@ -26,8 +26,14 @@ public class PlayerController {
         return ResponseEntity.ok(playerService.comparePlayers(playerId1, playerId2));
     }
 
+    // ESTE TOP TEN SOLO SACA EL ID DEL JUGADOR Y LA IMAGEN!!!!
     @GetMapping("/top10")
     public ResponseEntity<String> top10Players() throws UnirestException {
         return ResponseEntity.ok(playerService.top10Players());
+    }
+
+    @GetMapping("/squad/{squadId}")
+    public ResponseEntity<String> getSquad(@PathVariable long squadId) throws UnirestException {
+        return ResponseEntity.ok(playerService.getClubSquad(squadId));
     }
 }
